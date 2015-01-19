@@ -18,16 +18,9 @@
 
 
 
-\title{Project-II by Group Rome}
+\title{Convolutional Neural Networks using separable filters}
 \author{
-\fontsize{8}{8}\selectfont{Cimen Gokcen}\\
-\fontsize{8}{8}\selectfont{EPFL} \\
-\fontsize{8}{8}\selectfont{\texttt{gokcen.cimen@epfl.ch}} \\
-\And
-\fontsize{8}{8}\selectfont{Angelopoulos Vasileios} \\
-\fontsize{8}{8}\selectfont{EPFL} \\
-\fontsize{8}{8}\selectfont{\texttt{vasileios.angelopoulos@epfl.ch}} \\
-\And
+\fontsize{8}{8}\sele
 \fontsize{8}{8}\selectfont{Petrescu Viviana}\\
 \fontsize{8}{8}\selectfont{EPFL} \\
 \fontsize{8}{8}\selectfont{\texttt{viviana.petrescu@epfl.ch}} \\
@@ -40,17 +33,27 @@
 \maketitle
 
 \begin{abstract}
-This report presents experimental results and performance comparison of common machine learning methods on two different tasks. The first task is a computer vision problem, a people detection task. We implemented classifiers that are able to predict to a certain degree if an image contains a standing person or not. The performance was measured using ROC curves. The second task is a music recommendation problem. For this task, we need to predict how many times an user will listen to an artist based on the listening counts history of the users and their friendship information. The performance of the various methods was measured using the mean average error of the transformed data.
+Talk about the usefullness of CNN, ImageNet Need for speedup.
 \end{abstract}
 
-\section{Music Recommendation}
-\input{MusicTask}
+\section{Introduction}
+Talk about complexity of CNN
+Talk about current available programming tools
 
-\section{People Detection}
-\input{PeopleTask}
+\section{Speeding up CNN}
+Talk about CNN with separable filters and with GPU, fgpa etc
+
+\section{Experiments}
+\subsection{MNIST}
+MNIST 
+\subsection{Mitocondria}
+
+\section{Conclusions}
+Theoretical bounds of the separabe filters choice are proven.
+Impreved recognition on mitocondria set.
 
 \section*{Acknowledgments}
-We would like to thank the course teaching assistants that helped us a lot during this project preparation, not only during the exercise session, but also at their office hours. Furthermore, the help that our teacher Mohammad Emtiyaz Khan offered us was very  important, and we would want to thank him, too. All of the code used and submitted along with this report was written by equally by all of our group members.
+We would like to thank Simon Arosi that helped me a lot during this project giving me constant feedback.
 
 \bibliography{citations}
 \bibliographystyle{plain}
