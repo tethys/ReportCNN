@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{lecun2010convolutional}
+Yann LeCun, Koray Kavukcuoglu, and Cl{\'e}ment Farabet.
+\newblock Convolutional networks and applications in vision.
+\newblock In {\em Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
+  International Symposium on}, pages 253--256. IEEE, 2010.
+
 \bibitem{Zhou:2008}
 Yunhong Zhou, Dennis Wilkinson, Robert Schreiber, and Rong Pan.
 \newblock Large-scale parallel collaborative filtering for the netflix prize.
