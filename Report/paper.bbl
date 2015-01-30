@@ -1,16 +1,19 @@
 \begin{thebibliography}{1}
 
+\bibitem{Jaderberg14b}
+M.~Jaderberg, A.~Vedaldi, and A.~Zisserman.
+\newblock Speeding up convolutional neural networks with low rank expansions.
+\newblock In {\em British Machine Vision Conference}, 2014.
+
 \bibitem{lecun2010convolutional}
 Yann LeCun, Koray Kavukcuoglu, and Cl{\'e}ment Farabet.
 \newblock Convolutional networks and applications in vision.
 \newblock In {\em Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
   International Symposium on}, pages 253--256. IEEE, 2010.
 
-\bibitem{Zhou:2008}
-Yunhong Zhou, Dennis Wilkinson, Robert Schreiber, and Rong Pan.
-\newblock Large-scale parallel collaborative filtering for the netflix prize.
-\newblock In {\em Proceedings of the 4th International Conference on
-  Algorithmic Aspects in Information and Management}, AAIM '08, pages 337--348,
-  2008.
+\bibitem{DBLP:journals/corr/MathieuHL13}
+Micha{\"{e}}l Mathieu, Mikael Henaff, and Yann LeCun.
+\newblock Fast training of convolutional networks through ffts.
+\newblock {\em CoRR}, abs/1312.5851, 2013.
 
 \end{thebibliography}
