@@ -1,9 +1,19 @@
 \begin{thebibliography}{1}
 
+\bibitem{DBLP:journals/corr/abs-1202-2745}
+Dan~C. Ciresan, Ueli Meier, and J{\"{u}}rgen Schmidhuber.
+\newblock Multi-column deep neural networks for image classification.
+\newblock {\em CoRR}, abs/1202.2745, 2012.
+
 \bibitem{Jaderberg14b}
 M.~Jaderberg, A.~Vedaldi, and A.~Zisserman.
 \newblock Speeding up convolutional neural networks with low rank expansions.
 \newblock In {\em British Machine Vision Conference}, 2014.
+
+\bibitem{KoBa09}
+Tamara~G. Kolda and Brett~W. Bader.
+\newblock Tensor decompositions and applications.
+\newblock {\em SIAM Review}, 51(3):455--500, September 2009.
 
 \bibitem{lecun2010convolutional}
 Yann LeCun, Koray Kavukcuoglu, and Cl{\'e}ment Farabet.

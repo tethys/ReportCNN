@@ -46,15 +46,9 @@ In the forward pass, the computational complexity of evaluating one image of siz
 \section{Speeding up CNN}
 By far the most common approach for speeding up CNNs is to run them on the GPU, making use of the paralelism nature of the algorithm. Alternatively or combined, FFT can be used for the convolutional operations (for  both training and testing)\cite{DBLP:journals/corr/MathieuHL13}.  For testing, a significant speedup can be obtained in hardware by using FGPAs \citep{lecun2010convolutional}. The major drawback of FGPAs is that they are harder to program for people who do not work in the field.
 
- In \citep{Jaderberg14b} they prove speedup for CNNs for two different schemes using separable filters, one of which is similar with our approach but using a different optimization algorithm for obtaining the separable filters. 
-  If the 2d filters are decomposed into a set of separable 1d filters of rank $K$, the complexity per image becomes
+ In \citep{Jaderberg14b} they prove speedup of CNNs for two different schemes using separable filters, one of which is similar with our approach but uses a different optimization algorithm for obtaining the separable filters. 
+  If the $2D$ filters are decomposed into a set of separable $1D$ filters of rank $K$, the complexity per image becomes
  $O(WH(J +d_{1}+d_{2}))$. Thus, we obtain a speedup if $K<< \frac{Jd_{1}d_{2}}{J +d_{1}+d_{2}}$. 
- 
- Among the most popular available tools
- - Caffee (C++/GPU) increasingly popular and highly maintained by Berkley Vision group. Higher learning curve but the fastest available tool
- - Theano (Python NumPy C) symbolic differentiation, harder to debug.
- 	Easy for small hacks
- - Torch7 (Lua and C) 
 
 \section{Separable filters}
 In our approach, the set of filters $\chi$ for one convolutional layer is approximated as
@@ -73,8 +67,8 @@ We can obtain an approximation by minimizing the equation:
 & \| \chi - \sum_{r=1}^{r=R}{a_{r}\circ b_{r}\circ c_{r}} \|_{2}^{2} 
 \end{aligned}
 \end{equation*}
-We do this using a Matlab implementation of the the Canonical Polyadic decomposition (a generalization of  SVD for tensors),  algorithm which uses non linear conjugate gradient method. The optimization framework requires as input the rank $R$, which is almost never known. When the rank used for decomposition is not the theoretical one, the decomposition is not very accurate and the algorithm needs to be run with different initialization parameter until it converges.
-What is known is an upper bound on the theoretical rank $R$ for a  general tensor 3d tensor, given by:
+We optimize the above equation using a Matlab implementation of the Canonical Polyadic decomposition (a generalization of  SVD for tensors) with  non linear conjugate gradient method. The optimization framework requires as input the rank $R$, which is almost never known. When the rank used for decomposition is not the theoretical one, the decomposition is not very accurate and the algorithm needs to be run with different initialization parameter until it converges.
+What is known is an upper bound on the theoretical rank $R$ for a  general tensor $3D$ tensor $\chi \in \mathbb{R}^{I\times J\times K}$, given by:
  \begin{equation*}
 \begin{aligned}
 & \text{rank}(\chi) \leq 
@@ -82,7 +76,7 @@ What is known is an upper bound on the theoretical rank $R$ for a  general tenso
 \end{aligned}
 \end{equation*} 
 Besides the theoretical rank, there is also the notion of typical rank, which is any rank
-that appears with probability greater than 0, or that it is most common [cite].
+that appears with probability greater than 0, or that it is most common \cite{KoBa09}.
 Some of the known typical ranks are shown in Table \ref{table:rank}.
 Looking at the first row of Table \ref{table:rank}, we conclude that for a 'very tall' set of filters like the ones present in large CNNs, 
 we should expect the rank to be equal with the product of the two kernel dimensions.
@@ -99,16 +93,15 @@ $I \times J \times K$ with $I = JK - J$ (compact) & $I, I+1$  \\ \bottomrule
 \end{table}
 
 \section{Experiments}
-We run the experiments using Theano library in Python. 
-We varied the rank for every convolutional layer and compared the separable version with the non separable one. We recorded the time, the change in performance and how well the separable filters approximate the 2d filters. We did this for the MNIST and for the
-Mitocondria Striatum datasets.
+We ran the experiments in Python, using the Theano library. 
+We varied the rank for every convolutional layer and compared the separable version with the non separable one. We recorded the time, the change in performance and how well the separable filters approximate the $2D$ filters. We experimented on the MNIST and on the Mitocondria Striatum datasets.
 
 \subsection{MNIST}
 MNIST consists of a curated set of black and white images (28x28) depicting handwritten digits.
-The dataset is split into training 60.000 samples, validation 10.000 and testing
-10.000 samples. For this set, the approach of \cite{DBLP:journals/corr/abs-1202-2745} using CNNs is the best winning model with a 0.23 error rate (equivalent with 23 out of 10.000 digits not recognized correctly).
+The dataset is split into 60.000 training samples, 10.000 validation and 
+10.000 testing samples. For this set, the approach of \cite{DBLP:journals/corr/abs-1202-2745} using CNNs is the best winning model with a 0.23 error rate (equivalent with 23 out of 10.000 digits not recognized correctly).
 We start our experience with the reference Theano model for MNIST which achieves 0.82 error rate. Its configuration is shown in Fig\ref{fig:cnn1}
-\subsubsection{Model 1}
+\subsubsection{CNN Model 1}
 \begin{table}
 \centering
 \begin{tabular}{@{}rlll@{}}\toprule
@@ -121,15 +114,15 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 5 & fully conntected& 500 & \\
 6 & fully conntected & 2 neurons & \\ \bottomrule
 \end{tabular}
-\caption{Small CNN for MNIST set}
+\caption{Small CNN for MNIST}
 \label{fig:cnn1}
 \end{table}
 
-We first decompose the first convolutional layer1.  From the theoretical point of view, according to Table \ref{table:rank}, we have a compact tensor $R^{20\times 5 \times 5}$ with a typical rank of 20 or 21, so we expect a very good aproximation for rank in that range. 
-Fig[ref] shows how well is the approximation with varying rank from 4 to 16 in steps of 2 on the x axis and the fit on the y axis (100 corresponding to perfect fit). As expected, the fit is almost perfect for high ranks and decreases afterwards.
+We decompose the filter map from the first convolutional layer. From the theoretical point of view, according to Table \ref{table:rank}, we have a compact tensor $R^{20\times 5 \times 5}$ with a typical rank of 20 or 21, so we expect a very good aproximation for a rank in that range. 
+Fig\ref{fig:cnn1fitness}a shows how well is the approximation with varying rank from 4 to 16 in steps of 2 on the x axis and the fit on the y axis (100 corresponds to perfect fit). As expected, the fit is almost perfect for high ranks and decreases afterwards.
 
-Using separable filters, we obtain a theoretical speedup for conv layer 1 if $K<< \frac{Jd_{1}d_{2}}{J +d_{1}+d_{2}} = 16.66$. Fig\ref{fig:cnn1time}a shows the time improvements using separable filters for conv layer 1. The blue line represents the time per layer using non separable filters. In our implementation, the separable filters give a speedup for any rank, as the red curve is below the blue one. 
-We note that that theoretically the non separable time (blue line) and the separable conv with rank 16 should have given the same running time. The reason for the difference is due to implementation details and language specific.
+Using separable filters, we obtain a theoretical speedup for convolutional layer 1 if $K<< \frac{Jd_{1}d_{2}}{J +d_{1}+d_{2}} = \frac{20\times 5\times 5}{20 + 5 + 5} = 16.66$. Fig\ref{fig:cnn1time}a shows the time improvements using separable filters. The blue line represents the time per layer using non separable filters. In our implementation, the separable filters give a speedup for any rank, as the red curve is below the blue one. 
+We note that theoretically using non separable filters (blue line) and using separable filters with rank 16 should have given the same running time. The reason for the difference is due to implementation details and it is a language specific artifact.
 
 \begin{figure}[h]
   \centering
@@ -159,8 +152,7 @@ We note that that theoretically the non separable time (blue line) and the separ
   \label{fig:cnn1time}
 \end{figure}
 
-The question that remains now is to see how far can we afford to reduce the rank such that we do not lose much from the accuracy. Fig [cite]a shows how the performance of the CNN drops with decreasing rank. With rank 16 we do not
-lose at all performance, while for rank between 10 and 16 the error rate stays between 0.8 and 0.9 per cent, which is quite low. According to the application, even a rank of 8 or 6 is acceptable, since the drop is not more than 1 per cent.
+The question that remains is to see how far we can afford to reduce the rank such that we do not lose much accuracy. Fig \ref{fig:cnn1error} a shows how the performance of the CNN drops with decreasing rank. With rank 16 the performance is the same, while for rank between 10 and 16 the error rate stays between 0.8 and 0.9 per cent, which is quite low. According to the application, even a rank of 8 or 6 is acceptable, since the drop is not more than 1 per cent.
 
 \begin{figure}[h]
   \centering
@@ -176,16 +168,16 @@ lose at all performance, while for rank between 10 and 16 the error rate stays b
   \label{fig:cnn1error}
 \end{figure}
 
-We then kept the first layer fixed, and approximated the second layer.
-Similarly as before, according to Table \ref{table:rank}, we have a very tall tensor $R^{50\times 5 \times 5}$ with a typical rank of 25.
+In the second experiment, we kept the first layer unchanged and approximated the second convolutional layer.
+Similarly, according to Table \ref{table:rank}, we have a very tall tensor $R^{50\times 5 \times 5}$ with a typical rank of 25.
 Fig\ref{fig:cnn1fitness}b shows how well is the approximation with varying rank from 4 to 42 in steps of 2 . As expected, the fit is almost perfect (99.9 fit) for rank higher than the theoretical one of 25.
 
-From the complexity perspective, the separable cnn is faster if we use a rank $K << \frac{Jd_{1}d_{2}}{J +d_{1}+d_{2}} = 20.83$. In our case, for rank = 20 we obtained almost a 40$\%$ speedup. This is due as before due to language specific implementation.
+From the complexity perspective, the separable CNN is faster if we use a rank $K << \frac{Jd_{1}d_{2}}{J +d_{1}+d_{2}} = 20.83$. In our case, for rank = 20 we obtained almost a 40$\%$ speedup. This is due as before to language specific implementation.
 For rank 10, using separable filters is actually 3 times faster (theoretically 2 times faster).
 If we keep the rank greater than 10, the recognition never drops more than 1 error rate.
-For rank 12 the fit is 79 but the error rate is still almost unchanged which means we can easily use rank with not so perfect fit and still obtain good performance. The first layer with separable filters of similar fit of 79 obtain a slitghly lower performance.
+For rank 12 the fit is 79 but the error rate is still almost unchanged which means we can easily use rank with relatively bad fit and still obtain good performance. The first layer with separable filters of similar fit of 79 obtain a slitghly lower performance. This might imply that it is more important to approximate well the first layer, which is the building block for the following layers.
 
-\subsubsection{Model 2}
+\subsubsection{CNN Model 2}
 
 We use next a model with filters of size $9\times9$ for both layers.
 
@@ -223,6 +215,13 @@ The results can be seen in the figure below
 \end{figure}
 
 \subsection{Mitocondria}
+For the EM Mitocondria set, CNN are employed to solve the segmentation problem. Every pixel is classified as being part of the mitocondria or not.
+For pixel classification, a patch of 51x51 surrounding the pixel is extracted from the image and fed as input to a CNN which classifies it.
+For determining the size and parameters of the CNN I used a set of
+100.000 samples for training and 20.000 for validation (containing half positive andhalf negative samples). After determining the best setup, the network was trained on a larger set of 1milion samples for training and 200.000 for validation.
+
+The final test data represented a 3D volume consisting in 318 slices of  400x661 images. Thus, one frame 264.400 datasamples and 
+all frames 97 million datasamples.
 
 \begin{table}
 \centering
@@ -242,7 +241,8 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 \label{fig:CNN3}
 \end{table}
 
-\subsection{ImageNet}
+\subsection{Pre trained ImageNet CNN}
+Here we look to see if we could gain something from CNNs of large networks. The network below is the reference net from Alex Kristevski paper (without the split to be run on two GPUs). The net was trained by [cite] here. 
 
 \begin{figure}[h]
   \centering
@@ -274,7 +274,7 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 
 \section{Conclusions}
 Theoretical bounds of the separabe filters choice are proven.
-Impreved recognition on mitocondria set.
+
 
 \section*{Acknowledgments}
 We would like to thank Simon Arosi that helped me a lot during this project giving me constant feedback.

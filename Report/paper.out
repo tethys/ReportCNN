@@ -3,8 +3,8 @@
 \BOOKMARK [1][-]{section.3}{Separable filters}{}% 3
 \BOOKMARK [1][-]{section.4}{Experiments}{}% 4
 \BOOKMARK [2][-]{subsection.4.1}{MNIST}{section.4}% 5
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Model 1}{subsection.4.1}% 6
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Model 2}{subsection.4.1}% 7
+\BOOKMARK [3][-]{subsubsection.4.1.1}{CNN Model 1}{subsection.4.1}% 6
+\BOOKMARK [3][-]{subsubsection.4.1.2}{CNN Model 2}{subsection.4.1}% 7
 \BOOKMARK [2][-]{subsection.4.2}{Mitocondria}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.3}{ImageNet}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Pre trained ImageNet CNN}{section.4}% 9
 \BOOKMARK [1][-]{section.5}{Conclusions}{}% 10
