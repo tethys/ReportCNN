@@ -5,7 +5,7 @@ For the Mitocondria Striatum set, CNN are employed to solve a segmentation probl
 
 The final test data represented a 3D image volume consisting of 318 slices of size 400x661. Thus, one frame contains 264.400 datasamples that are fed as test input for the CNN, while all frames contain 97 million datasamples.
 
-The best setup obtained using the small training and validation set was the one presented in Fig\ref{fig:CNN3}. This gave us a VOC error on the first frame of 72. We then trained this net on the big set and obtained an error of 74. We notice that this is not comparable with state of the art methods which achieve results higher than 79 VOC or that use 3D information. The goal of this
+The best setup obtained using the small training and validation set was the one presented in Fig\ref{fig:CNN3} NonSep. This gave us a VOC error on the first frame of 77.2. We then trained this net on the big set and obtained an error of 74. We notice that this is not comparable with state of the art methods which achieve results higher than 79 VOC or that use 3D information. The goal of this
 is to see if we can obtain a speedup by using separable filters.
 
 \begin{table}
@@ -26,22 +26,23 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 \label{fig:CNN3}
 \end{table}
 
-Example of the first layer filters are shown in Fig[ref]. 
+Example of the weights learned in the first layer filters are shown in Fig[ref]. 
 
 \begin{table}
 \centering
 \begin{tabular}{@{}rllll@{}}\toprule
- &&Layer 1& Layer 2 & Layer 3\\ \midrule
-NonSep &Kernel Size & 10 & 20& 50\\
-&Size & 6x6 & 6x6& 6x6\\
-&Speedup rank& 16.36 & 22.5 & 29.03\\
-&Theoretical rank & 16.4 & <36 & 36 \\ 
-&time & 1 & 2 & 4 \\ \midrule
-Sep& time & 1 & 2 & 4 \\ 
-& rank& - & - & -\\ \midrule
-Sep& time & 1 & 2 & 4 \\ 
-& rank& - & - & -\\ \bottomrule
+ &&Conv L1& Conv L2 & Conv L3\\ \midrule
+NonSep &Kernel Size & 10 maps 6x6& 20 maps 6x6 & 50 maps 6x6\\
+&Speedup rank& $\leq$16.36 & $\leq$22.5 & $\leq$29.03\\
+&Theoretical rank & 16.4 & $\leq$36 & 36 \\ 
+&time & 8.1 & 26.8 & 18.4 \\ \midrule
+Sep1& rank & - & 20 & 36 \\ 
+& time& - & 20.1 & 17.6\\ \midrule
+Sep2& rank & 1 & 2 & 4 \\ 
+& time& - & - & -\\ \bottomrule
 \end{tabular}
 \caption{CNN for Mitocondria set}
 \label{fig:CNN3}
 \end{table}
+
+We keep layer 1 fixed and approximate conv L2 and L3 with rank 20 and 36 respectively. For the 3rd layer no significant change in performance is observed, while for layer 2 we notice a small speedup from roughly 26 to 20 ms. Since the fit of the two layers was very good (99.9) there was no drop in performance.

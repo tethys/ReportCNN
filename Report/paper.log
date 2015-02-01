@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.24)  1 FEB 2015 13:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.24)  1 FEB 2015 20:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,7 +436,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 File: images/decomposable.pdf Graphic file (type pdf)
 
 <use images/decomposable.pdf>
-Package pdftex.def Info: images/decomposable.pdf used on input line 58.
+Package pdftex.def Info: images/decomposable.pdf used on input line 59.
 (pdftex.def)             Requested size: 397.48499pt x 104.77951pt.
 
 
@@ -500,7 +500,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [3
 
  <./images/imagesCNN_page6.pdf> <./images/imagesCNN_page2.pdf>]
-<presentation_plots/convL2_error.png, id=274, 562.1pt x 421.575pt>
+<presentation_plots/convL2_error.png, id=275, 562.1pt x 421.575pt>
 File: presentation_plots/convL2_error.png Graphic file (type png)
 
 <use presentation_plots/convL2_error.png>
@@ -508,7 +508,7 @@ Package pdftex.def Info: presentation_plots/convL2_error.png used on input line
  108.
 (pdftex.def)             Requested size: 158.99156pt x 119.2431pt.
 
-<presentation_plots/convL2_time.png, id=275, 817.0525pt x 480.79625pt>
+<presentation_plots/convL2_time.png, id=276, 817.0525pt x 480.79625pt>
 File: presentation_plots/convL2_time.png Graphic file (type png)
 
 <use presentation_plots/convL2_time.png>
@@ -532,32 +532,32 @@ vL2_error.png (PNG copy)> <./presentation_plots/convL2_time.png (PNG copy)>]
 \openout2 = `ImageNet.aux'.
 
  (./ImageNet.tex
-<images/Layer1ImageNet.png, id=315, 749.80125pt x 562.1pt>
+<images/Layer1ImageNet.png, id=316, 749.80125pt x 562.1pt>
 File: images/Layer1ImageNet.png Graphic file (type png)
 
 <use images/Layer1ImageNet.png>
-Package pdftex.def Info: images/Layer1ImageNet.png used on input line 8.
+Package pdftex.def Info: images/Layer1ImageNet.png used on input line 10.
 (pdftex.def)             Requested size: 158.99156pt x 119.18521pt.
 
-<images/Layer2ImageNet.png, id=316, 861.2175pt x 728.7225pt>
+<images/Layer2ImageNet.png, id=317, 861.2175pt x 728.7225pt>
 File: images/Layer2ImageNet.png Graphic file (type png)
 
 <use images/Layer2ImageNet.png>
-Package pdftex.def Info: images/Layer2ImageNet.png used on input line 12.
+Package pdftex.def Info: images/Layer2ImageNet.png used on input line 14.
 (pdftex.def)             Requested size: 158.99156pt x 134.52245pt.
 
-<images/Layer3ImageNet.png, id=317, 806.01125pt x 418.56375pt>
+<images/Layer3ImageNet.png, id=318, 806.01125pt x 418.56375pt>
 File: images/Layer3ImageNet.png Graphic file (type png)
 
 <use images/Layer3ImageNet.png>
-Package pdftex.def Info: images/Layer3ImageNet.png used on input line 22.
+Package pdftex.def Info: images/Layer3ImageNet.png used on input line 24.
 (pdftex.def)             Requested size: 158.99156pt x 82.56165pt.
 
-<images/Layer4ImageNet.png, id=318, 562.1pt x 421.575pt>
+<images/Layer4ImageNet.png, id=319, 562.1pt x 421.575pt>
 File: images/Layer4ImageNet.png Graphic file (type png)
 
 <use images/Layer4ImageNet.png>
-Package pdftex.def Info: images/Layer4ImageNet.png used on input line 26.
+Package pdftex.def Info: images/Layer4ImageNet.png used on input line 28.
 (pdftex.def)             Requested size: 158.99156pt x 119.2431pt.
 ) [7
 
@@ -565,22 +565,22 @@ Package pdftex.def Info: images/Layer4ImageNet.png used on input line 26.
  <./images/Layer1ImageNet.png (PNG copy)> <./images/Layer2ImageNet.png (PNG cop
 y)> <./images/Layer3ImageNet.png (PNG copy)> <./images/Layer4ImageNet.png (PNG 
 copy)>] (./paper.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
  [8
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
  (./paper.aux
 (./MNIST.aux) (./Mitocondria.aux) (./ImageNet.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: AC922ACFECE4DE1F1AB6A8E90C4B78F7;578.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 113.
  ) 
 Here is how much of TeX's memory you used:
  8018 strings out of 493117
@@ -614,10 +614,10 @@ nts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on paper.pdf (8 pages, 1027287 bytes).
+Output written on paper.pdf (8 pages, 1028079 bytes).
 PDF statistics:
- 391 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
+ 392 PDF objects out of 1000 (max. 8388607)
+ 300 compressed objects within 3 object streams
  38 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
