@@ -1,12 +1,12 @@
 
 \subsection{Mitocondria Striatum}
-For the Mitocondria Striatum set, CNN are employed to solve a segmentation problem. Every pixel is classified as being part of the mitocondria or not. A patch of 51x51 surrounding the pixel is extracted from the image and fed as input to a CNN which acts as a binary classifier. For determining the size and parameters of the CNN we used a set of
+For the Mitocondria Striatum set, CNN are employed to solve a segmentation problem. Every pixel is classified as being part of the mitocondria or not. A patch of 51x51 surrounding the pixel is extracted from the image and fed as input to a CNN which acts as a binary classifier. For determining the parameters of the CNN we used a set of
 100.000 samples for training and 20.000 for validation (containing half positive and half negative samples). After determining the best setup, the network was trained on a larger set of 1 milion samples for training and 200.000 for validation.
 
-The final test data represented a 3D volume consisting in 318 slices of 400x661 images. Thus, one frame contains 264.400 datasamples that are fed as test input for the CNN and all frames 97 million datasamples.
+The final test data represented a 3D image volume consisting of 318 slices of size 400x661. Thus, one frame contains 264.400 datasamples that are fed as test input for the CNN, while all frames contain 97 million datasamples.
 
-The best setup obtained using the small training and validation set was the one presented in Fig\ref{fig:CNN3}.
-That one gave us a VOC error of on the first frame. We then trained this net on the big set and obtained an error of.
+The best setup obtained using the small training and validation set was the one presented in Fig\ref{fig:CNN3}. This gave us a VOC error on the first frame of 72. We then trained this net on the big set and obtained an error of 74. We notice that this is not comparable with state of the art methods which achieve results higher than 79 VOC or that use 3D information. The goal of this
+is to see if we can obtain a speedup by using separable filters.
 
 \begin{table}
 \centering
@@ -21,6 +21,26 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 4 & max pooling & 50 maps of 2x2& \\ 
 5 & fully conntected& 100 & \\
 6 & fully conntected & 2 neurons & \\ \bottomrule
+\end{tabular}
+\caption{CNN for Mitocondria set}
+\label{fig:CNN3}
+\end{table}
+
+Example of the first layer filters are shown in Fig[ref]. 
+
+\begin{table}
+\centering
+\begin{tabular}{@{}rllll@{}}\toprule
+ &&Layer 1& Layer 2 & Layer 3\\ \midrule
+NonSep &Kernel Size & 10 & 20& 50\\
+&Size & 6x6 & 6x6& 6x6\\
+&Speedup rank& 16.36 & 22.5 & 29.03\\
+&Theoretical rank & 16.4 & <36 & 36 \\ 
+&time & 1 & 2 & 4 \\ \midrule
+Sep& time & 1 & 2 & 4 \\ 
+& rank& - & - & -\\ \midrule
+Sep& time & 1 & 2 & 4 \\ 
+& rank& - & - & -\\ \bottomrule
 \end{tabular}
 \caption{CNN for Mitocondria set}
 \label{fig:CNN3}
