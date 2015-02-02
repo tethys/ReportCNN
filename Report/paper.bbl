@@ -26,4 +26,9 @@ Micha{\"{e}}l Mathieu, Mikael Henaff, and Yann LeCun.
 \newblock Fast training of convolutional networks through ffts.
 \newblock {\em CoRR}, abs/1312.5851, 2013.
 
+\bibitem{DBLP:dblp_journals/pami/SironiTRLF15}
+Amos Sironi, Bugra Tekin, Roberto Rigamonti, Vincent Lepetit, and Pascal Fua.
+\newblock Learning separable filters.
+\newblock pages 94--106, 2015.
+
 \end{thebibliography}

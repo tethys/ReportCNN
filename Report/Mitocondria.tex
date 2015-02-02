@@ -6,7 +6,6 @@ The final test data represented a 3D image volume consisting of 318 slices of si
 
 The best setup obtained using the small training and validation set was the one presented in Fig\ref{fig:CNN3} NonSep. This gave us a VOC error on the first frame of 77.2. We then trained this net on the big set and obtained an error of 74. We notice that this is not comparable with state of the art methods which achieve results higher than 79 VOC or that use 3D information. The goal of this
 is to see if we can obtain a speedup by using separable filters.
-
 \begin{table}
 \centering
 \begin{tabular}{@{}rlll@{}}\toprule
@@ -24,9 +23,7 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 \caption{CNN for Mitocondria set}
 \label{fig:CNN3}
 \end{table}
-
-Example of the weights learned in the first layer filters are shown in Fig[ref]. 
-
+Example of the weights learned in the first convolutional layer are shown in Fig[ref] and of output on one frame produced by the CNN. 
 \begin{table}
 \centering
 \begin{tabular}{@{}rllll@{}}\toprule
@@ -43,5 +40,26 @@ Sep2& rank & 1 & 2 & 4 \\
 \caption{CNN for Mitocondria set}
 \label{fig:CNN3}
 \end{table}
-
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.40\textwidth}
+   \includegraphics[width=\textwidth]{images/filters.png}
+    \caption{Weights learned in the 1st layer}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.40\textwidth}
+    \includegraphics[width=\textwidth]{images/frame1.png}
+    \caption{CNN output for frame 1}
+  \end{subfigure}
+    \begin{subfigure}[b]{0.40\textwidth}
+   \includegraphics[width=\textwidth]{images/GT_truth.png}
+    \caption{Weights learned in the 1st layer}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.40\textwidth}
+    \includegraphics[width=\textwidth]{images/GTframe1.png}
+    \caption{CNN output for frame 1}
+  \end{subfigure}
+  \caption{Mitocondria set}
+  \label{fig:user_stribution}
+\end{figure}
 We keep conv L1 fixed and approximate conv L2 and L3 with rank 20 and 36 respectively. For the 3rd layer no significant change in performance is observed, while for layer 2 we notice a small speedup from roughly 26 to 20 ms. Since the fit of the two layers was very good (99.9) there was no drop in classification performance.
+

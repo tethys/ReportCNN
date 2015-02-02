@@ -40,14 +40,12 @@ This technical report presents initial results on using CNN with separable filte
 \section{Introduction}
 Although proven to be very powerful, CNN are much slower for both training and testing than their counter parts SVM or Random Forests.
 In the forward pass, the computational complexity of evaluating one image of size $W\times H$ with $J$ filters of size $d_{1}\times d_{2}$ is $O(WHJd_{1}d_{2})$.
- 
-\textcolor{red}{removed 2x Although}
- Although improving the training time would be very beneficial since it would allow for more configurations to be tried and for larger networks, increasing effort has been put also into speeding up only testing time, since training can be done offline.
+Improving the training time would be very beneficial since it would allow for more configurations to be tried and for larger networks. However, increasing effort has been put also into speeding up only testing time, since training can be done offline.
 
 \section{Speeding up CNN}
 By far the most common approach for speeding up CNNs is to run them on the GPU, making use of the paralelism nature of the algorithm. Alternatively or combined, FFT can be used for the convolutional operations (for  both training and testing)\cite{DBLP:journals/corr/MathieuHL13}.  For testing, a significant speedup can be obtained in hardware by using FGPAs \citep{lecun2010convolutional}. The major drawback of FGPAs is that they are harder to program for people who do not work in the field.
 
- In \textcolor{red}{add Amos paper} \citep{Jaderberg14b} they prove speedup of CNNs for two different schemes using separable filters, one of which is similar with our approach but uses a different optimization algorithm for obtaining the separable filters. 
+ In \citep{DBLP:dblp_journals/pami/SironiTRLF15}\citep{Jaderberg14b} they prove speedup of CNNs for two different schemes using separable filters, one of which is similar with our approach but uses a different optimization algorithm for obtaining the separable filters. 
   If the $2D$ filters are decomposed into a set of separable $1D$ filters of rank $K$, the complexity per image becomes
  $O(WH(J +d_{1}+d_{2}))$. Thus, we obtain a speedup if $K<< \frac{Jd_{1}d_{2}}{J +d_{1}+d_{2}}$. 
 
