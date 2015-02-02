@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.24)  2 FEB 2015 17:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.24)  2 FEB 2015 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -448,58 +448,61 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 \openout2 = `MNIST.aux'.
 
  (./MNIST.tex
-<images/imagesCNN_page6.pdf, id=245, 421.3341pt x 324.49226pt>
-File: images/imagesCNN_page6.pdf Graphic file (type pdf)
+<images/model1_convL1_fit.pdf, id=245, 578.16pt x 433.62pt>
+File: images/model1_convL1_fit.pdf Graphic file (type pdf)
 
-<use images/imagesCNN_page6.pdf>
-Package pdftex.def Info: images/imagesCNN_page6.pdf used on input line 33.
-(pdftex.def)             Requested size: 158.99156pt x 122.44681pt.
+<use images/model1_convL1_fit.pdf>
+Package pdftex.def Info: images/model1_convL1_fit.pdf used on input line 33.
+(pdftex.def)             Requested size: 158.99156pt x 119.24255pt.
 
-<images/imagesCNN_page2.pdf, id=246, 466.8642pt x 370.02242pt>
-File: images/imagesCNN_page2.pdf Graphic file (type pdf)
+<images/model1_convL2_fit.pdf, id=246, 578.16pt x 433.62pt>
+File: images/model1_convL2_fit.pdf Graphic file (type pdf)
 
-<use images/imagesCNN_page2.pdf>
-Package pdftex.def Info: images/imagesCNN_page2.pdf used on input line 37.
-(pdftex.def)             Requested size: 158.99156pt x 126.0092pt.
+<use images/model1_convL2_fit.pdf>
+Package pdftex.def Info: images/model1_convL2_fit.pdf used on input line 37.
+(pdftex.def)             Requested size: 158.99156pt x 119.24255pt.
 
-<images/imagesCNN_page5.pdf, id=247, 466.8642pt x 373.63593pt>
-File: images/imagesCNN_page5.pdf Graphic file (type pdf)
+<images/model1_convL1_time.pdf, id=247, 578.16pt x 433.62pt>
+File: images/model1_convL1_time.pdf Graphic file (type pdf)
 
-<use images/imagesCNN_page5.pdf>
-Package pdftex.def Info: images/imagesCNN_page5.pdf used on input line 47.
-(pdftex.def)             Requested size: 158.99156pt x 127.23978pt.
+<use images/model1_convL1_time.pdf>
+Package pdftex.def Info: images/model1_convL1_time.pdf used on input line 47.
+(pdftex.def)             Requested size: 158.99156pt x 119.24255pt.
 
-<images/imagesCNN_page3.pdf, id=248, 462.52798pt x 357.0138pt>
-File: images/imagesCNN_page3.pdf Graphic file (type pdf)
+<images/model1_convL2_time.pdf, id=248, 578.16pt x 433.62pt>
+File: images/model1_convL2_time.pdf Graphic file (type pdf)
 
-<use images/imagesCNN_page3.pdf>
-Package pdftex.def Info: images/imagesCNN_page3.pdf used on input line 51.
-(pdftex.def)             Requested size: 158.99156pt x 122.72318pt.
+<use images/model1_convL2_time.pdf>
+Package pdftex.def Info: images/model1_convL2_time.pdf used on input line 51.
+(pdftex.def)             Requested size: 158.99156pt x 119.24255pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/imagesCNN_page4.pdf, id=250, 466.14153pt x 281.13028pt>
-File: images/imagesCNN_page4.pdf Graphic file (type pdf)
+<images/model1_convL1_error.pdf, id=250, 578.16pt x 433.62pt>
+File: images/model1_convL1_error.pdf Graphic file (type pdf)
 
-<use images/imagesCNN_page4.pdf>
-Package pdftex.def Info: images/imagesCNN_page4.pdf used on input line 63.
-(pdftex.def)             Requested size: 158.99156pt x 95.88759pt.
+<use images/model1_convL1_error.pdf>
+Package pdftex.def Info: images/model1_convL1_error.pdf used on input line 63.
+(pdftex.def)             Requested size: 158.99156pt x 119.24255pt.
 
-<images/imagesCNN_page1.pdf, id=251, 463.25072pt x 317.98802pt>
-File: images/imagesCNN_page1.pdf Graphic file (type pdf)
+<images/model1_convL2_error.pdf, id=251, 578.16pt x 433.62pt>
+File: images/model1_convL2_error.pdf Graphic file (type pdf)
 
-<use images/imagesCNN_page1.pdf>
-Package pdftex.def Info: images/imagesCNN_page1.pdf used on input line 67.
-(pdftex.def)             Requested size: 158.99156pt x 109.13828pt.
+<use images/model1_convL2_error.pdf>
+Package pdftex.def Info: images/model1_convL2_error.pdf used on input line 67.
+(pdftex.def)             Requested size: 158.99156pt x 119.24255pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3
 
- <./images/imagesCNN_page6.pdf> <./images/imagesCNN_page2.pdf>]
-<presentation_plots/convL2_error.png, id=281, 562.1pt x 421.575pt>
+ <./images/model1_convL1_fit.pdf> <./images/model1_convL2_fit.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./images/model1_convL2_fit.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>] <presentation_plots/convL2_error.png, id=337, 562.1pt x 421.575pt>
 File: presentation_plots/convL2_error.png Graphic file (type png)
 
 <use presentation_plots/convL2_error.png>
@@ -507,7 +510,7 @@ Package pdftex.def Info: presentation_plots/convL2_error.png used on input line
  106.
 (pdftex.def)             Requested size: 158.99156pt x 119.2431pt.
 
-<presentation_plots/convL2_time.png, id=282, 817.0525pt x 480.79625pt>
+<presentation_plots/convL2_time.png, id=338, 817.0525pt x 480.79625pt>
 File: presentation_plots/convL2_time.png Graphic file (type png)
 
 <use presentation_plots/convL2_time.png>
@@ -521,33 +524,43 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <./images/imagesCNN_page5.pdf> <./images/imagesCNN_page3.pdf> <./images/imag
-esCNN_page4.pdf> <./images/imagesCNN_page1.pdf>] [5 <./presentation_plots/convL
-2_error.png (PNG copy)> <./presentation_plots/convL2_time.png (PNG copy)>]
+[4 <./images/model1_convL1_time.pdf> <./images/model1_convL2_time.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./images/model1_convL2_time.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+> <./images/model1_convL1_error.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./images/model1_convL1_error.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+> <./images/model1_convL2_error.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./images/model1_convL2_error.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+>] [5 <./presentation_plots/convL2_error.png (PNG copy)> <./presentation_plots/
+convL2_time.png (PNG copy)>]
 \openout2 = `Mitocondria.aux'.
 
-
-(./Mitocondria.tex <images/filters.png, id=316, 441.5697pt x 158.994pt>
+ (./Mitocondria.tex
+<images/filters.png, id=489, 441.5697pt x 158.994pt>
 File: images/filters.png Graphic file (type png)
-
-<use images/filters.png>
+ <use images/filters.png>
 Package pdftex.def Info: images/filters.png used on input line 44.
 (pdftex.def)             Requested size: 158.99156pt x 57.2475pt.
- <images/frame1.png, id=318, 718.685pt x 513.92pt>
-File: images/frame1.png Graphic file (type png)
 
-<use images/frame1.png>
+<images/frame1.png, id=491, 718.685pt x 513.92pt>
+File: images/frame1.png Graphic file (type png)
+ <use images/frame1.png>
 Package pdftex.def Info: images/frame1.png used on input line 48.
 (pdftex.def)             Requested size: 158.99156pt x 113.69008pt.
 
-<images/GT_truth.png, id=319, 783.92876pt x 456.70625pt>
+<images/GT_truth.png, id=492, 783.92876pt x 456.70625pt>
 File: images/GT_truth.png Graphic file (type png)
 
 <use images/GT_truth.png>
 Package pdftex.def Info: images/GT_truth.png used on input line 52.
 (pdftex.def)             Requested size: 158.99156pt x 92.62187pt.
 
-<images/GTframe1.png, id=320, 783.92876pt x 456.70625pt>
+<images/GTframe1.png, id=493, 783.92876pt x 456.70625pt>
 File: images/GTframe1.png Graphic file (type png)
 
 <use images/GTframe1.png>
@@ -560,32 +573,32 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [6
 
 
-] <images/Layer1ImageNet.png, id=338, 749.80125pt x 562.1pt>
+] <images/Layer1ImageNet.png, id=512, 749.80125pt x 562.1pt>
 File: images/Layer1ImageNet.png Graphic file (type png)
 
 <use images/Layer1ImageNet.png>
-Package pdftex.def Info: images/Layer1ImageNet.png used on input line 90.
+Package pdftex.def Info: images/Layer1ImageNet.png used on input line 108.
 (pdftex.def)             Requested size: 158.99156pt x 119.18521pt.
 
-<images/Layer2ImageNet.png, id=339, 861.2175pt x 728.7225pt>
+<images/Layer2ImageNet.png, id=513, 861.2175pt x 728.7225pt>
 File: images/Layer2ImageNet.png Graphic file (type png)
 
 <use images/Layer2ImageNet.png>
-Package pdftex.def Info: images/Layer2ImageNet.png used on input line 94.
+Package pdftex.def Info: images/Layer2ImageNet.png used on input line 112.
 (pdftex.def)             Requested size: 158.99156pt x 134.52245pt.
 
-<images/Layer3ImageNet.png, id=340, 806.01125pt x 418.56375pt>
+<images/Layer3ImageNet.png, id=514, 806.01125pt x 418.56375pt>
 File: images/Layer3ImageNet.png Graphic file (type png)
 
 <use images/Layer3ImageNet.png>
-Package pdftex.def Info: images/Layer3ImageNet.png used on input line 98.
+Package pdftex.def Info: images/Layer3ImageNet.png used on input line 116.
 (pdftex.def)             Requested size: 158.99156pt x 82.56165pt.
 
-<images/Layer4ImageNet.png, id=341, 562.1pt x 421.575pt>
+<images/Layer4ImageNet.png, id=515, 562.1pt x 421.575pt>
 File: images/Layer4ImageNet.png Graphic file (type png)
 
 <use images/Layer4ImageNet.png>
-Package pdftex.def Info: images/Layer4ImageNet.png used on input line 102.
+Package pdftex.def Info: images/Layer4ImageNet.png used on input line 120.
 (pdftex.def)             Requested size: 158.99156pt x 119.2431pt.
 ) [7 <./images/filters.png> <./images/frame1.png (PNG copy)> <./images/GT_truth
 .png (PNG copy)> <./images/GTframe1.png (PNG copy)>] [8 <./images/Layer1ImageNe
@@ -609,7 +622,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
  ) 
 Here is how much of TeX's memory you used:
  8045 strings out of 493117
- 120484 string characters out of 6135432
+ 120574 string characters out of 6135432
  216478 words of memory out of 5000000
  11327 multiletter control sequences out of 15000+600000
  21376 words of font info for 45 fonts, out of 8000000 for 9000
@@ -639,10 +652,10 @@ nts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on paper.pdf (9 pages, 1619044 bytes).
+Output written on paper.pdf (9 pages, 1355070 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 320 compressed objects within 4 object streams
+ 593 PDF objects out of 1000 (max. 8388607)
+ 328 compressed objects within 4 object streams
  43 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
