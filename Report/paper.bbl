@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{chatfield14return}
+K.~Chatfield, K.~Simonyan, A.~Vedaldi, and A.~Zisserman.
+\newblock Return of the devil in the details: Delving deep into convolutional
+  nets.
+\newblock In {\em Proceedings of the British Machine Vision Conference (BMVC)},
+  2014.
+
 \bibitem{DBLP:journals/corr/abs-1202-2745}
 Dan~C. Ciresan, Ueli Meier, and J{\"{u}}rgen Schmidhuber.
 \newblock Multi-column deep neural networks for image classification.
@@ -14,6 +21,12 @@ M.~Jaderberg, A.~Vedaldi, and A.~Zisserman.
 Tamara~G. Kolda and Brett~W. Bader.
 \newblock Tensor decompositions and applications.
 \newblock {\em SIAM Review}, 51(3):455--500, September 2009.
+
+\bibitem{Krizhevsky_imagenetclassification}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E. Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in Neural Information Processing Systems}, page
+  2012.
 
 \bibitem{lecun2010convolutional}
 Yann LeCun, Koray Kavukcuoglu, and Cl{\'e}ment Farabet.

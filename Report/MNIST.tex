@@ -1,11 +1,11 @@
 
 \subsection{MNIST}
-MNIST consists of a curated set of black and white images (28x28) depicting handwritten digits.
+MNIST consists of a curated set of grayscale images (28x28) depicting handwritten digits.
 The dataset is split into 60.000 training samples, 10.000 validation and 
-10.000 testing samples. For this set, the approach of \cite{DBLP:journals/corr/abs-1202-2745} using CNNs is the best winning model with a 0.23 error rate (equivalent with 23 out of 10.000 digits not recognized correctly).
+10.000 testing samples. For this set, the approach of \cite{DBLP:journals/corr/abs-1202-2745} using CNNs is the best  model with a 0.23 error rate (23 out of 10.000 digits not recognized correctly).
 We start our experience with the reference Theano model for MNIST which achieves 0.82 error rate. Its configuration is shown in Table\ref{fig:cnn1}
 \subsubsection{CNN Model 1}
-\begin{table}
+\begin{table}[h!]
 \centering
 \begin{tabular}{@{}rlll@{}}\toprule
 Layer & Type & Maps and neurons& Kernel size \\ \midrule
@@ -22,12 +22,12 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 \end{table}
 
 We decompose the filter map from the first convolutional layer. From the theoretical point of view, according to Table \ref{table:rank}, we have a compact tensor $R^{20\times 5 \times 5}$ with a typical rank of 20 or 21, so we expect a very good aproximation for a rank in that range. 
-Fig\ref{fig:cnn1fitness}a shows how well is the approximation with varying rank from 4 to 16 in steps of 2 on the x axis and the fit on the y axis (100 corresponds to perfect fit). As expected, the fit is almost perfect for high ranks and decreases afterwards.
+Fig\ref{fig:cnn1fitness}a shows how well is the approximation with varying rank from 4 to 16 in steps of 2 on the $x$ axis and the fit on the $y$ axis (100 corresponds to perfect fit). As expected, the fit is almost perfect for high ranks and decreases afterwards.
 
 Using separable filters, we obtain a theoretical speedup for convolutional layer 1 if $K<< \frac{Jd_{1}d_{2}}{J +d_{1}+d_{2}} = \frac{20\times 5\times 5}{20 + 5 + 5} = 16.66$. Fig\ref{fig:cnn1time}a shows the time improvements using separable filters. The blue line represents the time per layer using non separable filters. In our implementation, the separable filters give a speedup for any rank, as the red curve is below the blue one. 
 We note that theoretically using non separable filters (blue line) and using separable filters with rank 16 should have given the same running time. The reason for the difference is due to implementation details and it is a language specific artifact.
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.40\textwidth}
    \includegraphics[width=\textwidth]{images/imagesCNN_page6.pdf}
@@ -41,7 +41,7 @@ We note that theoretically using non separable filters (blue line) and using sep
   \label{fig:cnn1fitness}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.40\textwidth}
    \includegraphics[width=\textwidth]{images/imagesCNN_page5.pdf}
@@ -55,9 +55,9 @@ We note that theoretically using non separable filters (blue line) and using sep
   \label{fig:cnn1time}
 \end{figure}
 
-The question that remains is to see how far we can afford to reduce the rank such that we do not lose much accuracy. Fig \ref{fig:cnn1error} a shows how the performance of the CNN drops with decreasing rank. With rank 16 the performance is the same, while for rank between 10 and 16 the error rate stays between 0.8 and 0.9 per cent, which is quite low. According to the application, even a rank of 8 or 6 is acceptable, since the drop is not more than 1 per cent.
+The question that remains is to see how far we can afford to reduce the rank such that we do not lose much from the classification accuracy. Fig \ref{fig:cnn1error} a shows how the performance of the CNN drops with decreasing rank. With rank 16 the performance is the same, while for rank between 10 and 16 the error rate stays between 0.8 and 0.9 per cent, which is quite low. According to the application, even a rank of 8 or 6 is acceptable, since the drop is not more than 1 per cent.
 
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.40\textwidth}
    \includegraphics[width=\textwidth]{images/imagesCNN_page4.pdf}
@@ -83,7 +83,7 @@ For rank 12 the fit is 79 but the error rate is still almost unchanged which mea
 In the following experiment, we keep the same number of filters per layers but increase the
 kernel sizes to $9\times9$ Fig\ref{fig:CNN2}. We obtained a slightly lower performance for this set 1.3 error rate (compared with 0.82 for the previous model). In [cite here \textcolor{red}{find paper}]
 they claim that using larger filters does not actually improve peformance of cnns since they struggle to learn bigger filters, but investigating this issue is not the goal of the report.
-\begin{table}
+\begin{table}[h!]
 \centering
 \begin{tabular}{@{}rlll@{}}\toprule
 Layer & Type & Maps and neurons& Kernel size \\ \midrule
@@ -100,7 +100,7 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 \end{table}
 Here we only approximate convolutional layer 2 (rank from 4 to 18 with corresponding fit between 45 and 90). The theoretical rank is less than 49 and we obtain speedup if the rank $K << 59.5$
 The results can be seen in Fig\ref{fig:cnn2error}. We notice that up to rank 8 the error of the Separable CNN is reasonable and does not drop more than 1.6 (1.3 is the reference error of the non separable CNN). The speedup for conv L2 drops from 15ms to 12 ms for rank 18 , which is actually much smaller than we expected for using larger filters.
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.40\textwidth}
    \includegraphics[width=\textwidth]{presentation_plots/convL2_error.png}

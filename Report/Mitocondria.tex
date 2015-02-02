@@ -32,15 +32,13 @@ NonSep &Kernel Size & 10 maps 6x6& 20 maps 6x6 & 50 maps 6x6\\
 &Speedup rank& $\leq$16.36 & $\leq$22.5 & $\leq$29.03\\
 &Theoretical rank & 16.4 & $\leq$36 & 36 \\ 
 &time & 8.1 & 26.8 & 18.4 \\ \midrule
-Sep1& rank & - & 20 & 36 \\ 
+Separable& rank & - & 20 & 36 \\ 
 & time& - & 20.1 & 17.6\\ \midrule
-Sep2& rank & 1 & 2 & 4 \\ 
-& time& - & - & -\\ \bottomrule
 \end{tabular}
 \caption{CNN for Mitocondria set}
 \label{fig:CNN3}
 \end{table}
-\begin{figure}[h]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}[b]{0.40\textwidth}
    \includegraphics[width=\textwidth]{images/filters.png}
@@ -48,18 +46,20 @@ Sep2& rank & 1 & 2 & 4 \\
   \end{subfigure}
   \begin{subfigure}[b]{0.40\textwidth}
     \includegraphics[width=\textwidth]{images/frame1.png}
-    \caption{CNN output for frame 1}
+    \caption{CNN output frame, not thresholded}
   \end{subfigure}
     \begin{subfigure}[b]{0.40\textwidth}
    \includegraphics[width=\textwidth]{images/GT_truth.png}
-    \caption{Weights learned in the 1st layer}
+    \caption{CNN input frame}
   \end{subfigure}
   \begin{subfigure}[b]{0.40\textwidth}
     \includegraphics[width=\textwidth]{images/GTframe1.png}
-    \caption{CNN output for frame 1}
+    \caption{Groundtruth frame}
   \end{subfigure}
-  \caption{Mitocondria set}
-  \label{fig:user_stribution}
+  \caption{Input and output example of CNN for mitocondria dataset. Fig a) shows that the filters are mostly edge and circle detectors which constitute basic building blocks for the interior of the mitocondria.
+  Comparing b), c) and d) we notice the 'noisy' nature of the CNN output for pixel classification. Preprocessing the final output b) using a median filter would likely improve the results.}
+  \label{fig:mitocondria}
 \end{figure}
 We keep conv L1 fixed and approximate conv L2 and L3 with rank 20 and 36 respectively. For the 3rd layer no significant change in performance is observed, while for layer 2 we notice a small speedup from roughly 26 to 20 ms. Since the fit of the two layers was very good (99.9) there was no drop in classification performance.
 
+Fig \ref{fig:mitocondria} shows an example of the CNN input and output and the type of filters that it learns. 
