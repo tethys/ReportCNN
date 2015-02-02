@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.24)  1 FEB 2015 20:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.24)  1 FEB 2015 21:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,7 +505,7 @@ File: presentation_plots/convL2_error.png Graphic file (type png)
 
 <use presentation_plots/convL2_error.png>
 Package pdftex.def Info: presentation_plots/convL2_error.png used on input line
- 108.
+ 106.
 (pdftex.def)             Requested size: 158.99156pt x 119.2431pt.
 
 <presentation_plots/convL2_time.png, id=276, 817.0525pt x 480.79625pt>
@@ -513,15 +513,15 @@ File: presentation_plots/convL2_time.png Graphic file (type png)
 
 <use presentation_plots/convL2_time.png>
 Package pdftex.def Info: presentation_plots/convL2_time.png used on input line 
-112.
+110.
 (pdftex.def)             Requested size: 158.99156pt x 93.55313pt.
-
+)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [4 <./images/imagesCNN_page5.pdf> <./images/imagesCNN_page3.pdf> <./images/im
-agesCNN_page4.pdf> <./images/imagesCNN_page1.pdf>] [5 <./presentation_plots/con
-vL2_error.png (PNG copy)> <./presentation_plots/convL2_time.png (PNG copy)>]
+[4 <./images/imagesCNN_page5.pdf> <./images/imagesCNN_page3.pdf> <./images/imag
+esCNN_page4.pdf> <./images/imagesCNN_page1.pdf>] [5 <./presentation_plots/convL
+2_error.png (PNG copy)> <./presentation_plots/convL2_time.png (PNG copy)>]
 \openout2 = `Mitocondria.aux'.
 
 
@@ -614,7 +614,7 @@ nts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on paper.pdf (8 pages, 1028079 bytes).
+Output written on paper.pdf (8 pages, 1028182 bytes).
 PDF statistics:
  392 PDF objects out of 1000 (max. 8388607)
  300 compressed objects within 3 object streams

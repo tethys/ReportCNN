@@ -81,8 +81,8 @@ If we keep the rank greater than 10, the recognition never drops more than 1 err
 For rank 12 the fit is 79 but the error rate is still almost unchanged which means we can easily use rank with relatively bad fit and still obtain good performance. Using separable filters of similar fit of 79  we obtained a slitghly lower performance. This might imply that it is more important to approximate well the first layer, which is the building block for the following layers.
 \subsubsection{CNN Model 2}
 In the following experiment, we keep the same number of filters per layers but increase the
-kernel sizes to $9\times9$ Fig\ref{fig:CNN2}. We obtained a slightly lower performance for this set 1.3 error rate (compared with 0.82 for the previous model). This is related with the net not being able to learn larger weights as documented in [cite here \textcolor{red}{find paper}]
-
+kernel sizes to $9\times9$ Fig\ref{fig:CNN2}. We obtained a slightly lower performance for this set 1.3 error rate (compared with 0.82 for the previous model). In [cite here \textcolor{red}{find paper}]
+they claim that using larger filters does not actually improve peformance of cnns since they struggle to learn bigger filters, but investigating this issue is not the goal of the report.
 \begin{table}
 \centering
 \begin{tabular}{@{}rlll@{}}\toprule
@@ -98,10 +98,8 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 \caption{Bigger CNN for MNIST set}
 \label{fig:CNN2}
 \end{table}
-
 Here we only approximate convolutional layer 2 (rank from 4 to 18 with corresponding fit between 45 and 90). The theoretical rank is less than 49 and we obtain speedup if the rank $K << 59.5$
-The results can be seen in fig\ref{fig:cnn2error}. We notice that up to rank 8 the error of the Separable CNN is reasonable and does not drop more than 1.6 (1.3 is the reference error of the non separable CNN). The speedup for rank 18 is from 15ms to 12ms per layer, which is actually smaller than we expected for using larger filters.
-
+The results can be seen in Fig\ref{fig:cnn2error}. We notice that up to rank 8 the error of the Separable CNN is reasonable and does not drop more than 1.6 (1.3 is the reference error of the non separable CNN). The speedup for conv L2 drops from 15ms to 12 ms for rank 18 , which is actually much smaller than we expected for using larger filters.
 \begin{figure}[h]
   \centering
   \begin{subfigure}[b]{0.40\textwidth}
