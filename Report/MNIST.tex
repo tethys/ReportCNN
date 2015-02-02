@@ -37,7 +37,7 @@ We note that theoretically using non separable filters (blue line) and using sep
     \includegraphics[width=\textwidth]{images/imagesCNN_page2.pdf}
     \caption{Convolutional layer 2}
   \end{subfigure}
-  \caption{Rank versus Fit}
+  \caption{CNN Model 1 MNIST. Rank vs Fit}
   \label{fig:cnn1fitness}
 \end{figure}
 
@@ -51,7 +51,7 @@ We note that theoretically using non separable filters (blue line) and using sep
     \includegraphics[width=\textwidth]{images/imagesCNN_page3.pdf}
     \caption{Convolutional layer 2}
   \end{subfigure}
-  \caption{Rank vs Time}
+  \caption{CNN Model 1 MNIST. Rank vs Time}
   \label{fig:cnn1time}
 \end{figure}
 
@@ -65,9 +65,9 @@ The question that remains is to see how far we can afford to reduce the rank suc
   \end{subfigure}
   \begin{subfigure}[b]{0.40\textwidth}
     \includegraphics[width=\textwidth]{images/imagesCNN_page1.pdf}
-    \caption{}
+    \caption{Convolutional layer 2}
   \end{subfigure}
-  \caption{Convolutional layer 2}
+  \caption{CNN Model 1 MNIST. Rank vs Error Rate}
   \label{fig:cnn1error}
 \end{figure}
 
@@ -95,7 +95,7 @@ Layer & Type & Maps and neurons& Kernel size \\ \midrule
 5 & fully conntected& 500 & \\
 6 & fully conntected & 2 neurons & \\ \bottomrule
 \end{tabular}
-\caption{CNN Model 2 for MNIST}
+\caption{CNN Model 2  MNIST}
 \label{fig:CNN2}
 \end{table}
 Here we only approximate convolutional layer 2 (rank from 4 to 18 with corresponding fit between 45 and 90). The theoretical rank is less than 49 and we obtain speedup if the rank $K << 59.5$
@@ -104,12 +104,12 @@ The results can be seen in Fig\ref{fig:cnn2error}. We notice that up to rank 8 t
   \centering
   \begin{subfigure}[b]{0.40\textwidth}
    \includegraphics[width=\textwidth]{presentation_plots/convL2_error.png}
-    \caption{Error vs Rank}
+    \caption{Conv L2 - Rank vs Error}
   \end{subfigure}
   \begin{subfigure}[b]{0.40\textwidth}
     \includegraphics[width=\textwidth]{presentation_plots/convL2_time.png}
-    \caption{Rank vs Time}
+    \caption{Conv L2 - Rank vs Time}
   \end{subfigure}
-  \caption{Convolutional layer 2}
+  \caption{CNN Model 2 MNIST.}
   \label{fig:cnn2error}
 \end{figure}

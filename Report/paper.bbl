@@ -42,6 +42,6 @@ Micha{\"{e}}l Mathieu, Mikael Henaff, and Yann LeCun.
 \bibitem{DBLP:dblp_journals/pami/SironiTRLF15}
 Amos Sironi, Bugra Tekin, Roberto Rigamonti, Vincent Lepetit, and Pascal Fua.
 \newblock Learning separable filters.
-\newblock pages 94--106, 2015.
+\newblock In {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 2015.
 
 \end{thebibliography}
